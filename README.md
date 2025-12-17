@@ -21,7 +21,7 @@ _______
 
 <br>
 
-<h3 align="center"><b>Abstract</b></h3><br>
+### Abstract
 
 This paper combines autoregressive and masked-diffusion training objectives without any architectural modifications, resulting in flexible language models that outperform single-objective models. Autoregressive modeling has been a popular approach, partly because of its training efficiency; however, that comes at the cost of sensitivity to overfitting. On the other hand, masked-diffusion models are less efficient to train while being more resilient to overfitting. In this work, we demonstrate that dual-objective training achieves the best of both worlds. To derive the optimal ratio between both objectives, we train and evaluate 50 language models under varying levels of data repetition. We show that it is optimal to combine both objectives under all evaluated settings and that the optimal ratio is similar whether targeting autoregressive or masked-diffusion downstream performance.
 
@@ -35,7 +35,7 @@ _______
 
 <br>
 
-## Please cite the following publication
+### Please cite the following publication
 ```bibtex
 @misc{samuel2025duallanguagemodelsbalancing,
       title={Dual Language Models: Balancing Training Efficiency and Overfitting Resilience}, 
