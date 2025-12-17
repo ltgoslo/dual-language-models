@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH --job-name=hybrid-lm
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --partition=small
+#SBATCH --time=2-00:00:00
+#SBATCH --account=project_465001890
+#SBATCH --output logs/%j.out
+#SBATCH --error logs/%j.out
+
+if [ -z $SLURM_JOB_ID ]; then
+    mkdir -p logs
+    sbatch "$0" "$@"
+    exit
+fi
+
+export EBU_USER_PREFIX=/project/project_465001925/charpent2.6
+module load LUMI
+module load PyTorch/2.6.0-rocm-6.2.4-python-3.12-singularity-20250404
+
+srun python -m $@
